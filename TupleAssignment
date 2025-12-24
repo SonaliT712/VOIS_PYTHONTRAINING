@@ -1,0 +1,51 @@
+# 1.Write a program to find the maximum and minimum elements in a tuple.
+t = (12, 5, 23, 8, 16)
+
+maximum = minimum = t[0]
+
+for num in t:
+    if num > maximum:
+        maximum = num
+    if num < minimum:
+        minimum = num
+
+print("Maximum element:", maximum)
+print("Minimum element:", minimum)
+print("-------------------------------------------------------------------")
+# 2. Convert a list of tuples into a dictionary.
+lst = [("a", 1), ("b", 2), ("c", 3)]
+
+d = {}
+
+for key, value in lst:
+    d[key] = value
+
+print("Dictionary:", d)
+print("-------------------------------------------------------------------")
+# 3. Count the occurrence of an element in a tuple without using built-in methods.
+t = (1, 2, 3, 2, 4, 2, 5)
+element = 2
+
+count = 0
+for item in t:
+    if item == element:
+        count += 1
+
+print("Occurrence of", element, ":", count)
+print("-------------------------------------------------------------------")
+# 4. Create a tuple with mutable elements and modify the mutable data inside it.
+t = (1, [2, 3], 4)
+
+# Modifying the mutable element (list) inside tuple
+t[1].append(5)
+
+print("Modified tuple:", t)
+print("-------------------------------------------------------------------")
+# 5. Write a program to swap two tuples.
+t1 = (1, 2, 3)
+t2 = (4, 5, 6)
+
+t1, t2 = t2, t1
+
+print("Tuple 1:", t1)
+print("Tuple 2:", t2)
