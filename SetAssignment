@@ -1,0 +1,34 @@
+#SET – Coding Questions
+# 1.Write a program to find the union, intersection, difference, and symmetric difference of two sets.
+set1 = {1, 2, 3, 4}
+set2 = {3, 4, 5, 6}
+
+print(f"Union: {set1 | set2}")
+print(f"Intersection: {set1 & set2}")
+print(f"Difference: {set1 - set2}")
+print(f"Symmetric Difference: {set1 ^ set2}")
+print("-------------------------------------------------------------------")
+# 2.Remove common elements from two sets.
+set1 = {1, 2, 3, 4}
+set2 = {3, 4, 5, 6}
+
+set1 -= set1 & set2  # Remove common elements from set1
+print(set1)  # Output: {1, 2}
+print("-------------------------------------------------------------------")
+# 3.Write a program to check whether one set is a subset of another.
+set1 = {1, 2, 3}
+set2 = {1, 2, 3, 4, 5}
+
+print(set1.issubset(set2))  # Output: True
+print("-------------------------------------------------------------------")
+# 4.Iterate over a set and print only elements greater than a given number.
+set_data = {1, 2, 3, 4, 5}
+threshold = 3
+for element in set_data:
+    if element > threshold:
+        print(element)
+print("-------------------------------------------------------------------")
+# 5.Given a list with duplicate values, convert it into a set and back to a list with unique elements.
+lst = [1, 2, 2, 3, 4, 4, 5, 5]
+unique_list = list(set(lst))
+print(unique_list)  # Output: [1, 2, 3, 4, 5]
