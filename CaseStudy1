@@ -1,0 +1,42 @@
+# Case Study 1: Student Grade Calculator
+# Write a program to store marks of 5 students in a dictionary. Each student should have 3 subjects.
+# Create a function to calculate the average marks of each student.
+# Based on the average, assign grades using control statements:
+# A: 90 and above
+# B: 75–89
+# C: 60–74
+# Fail: below 60
+# Print the student name, average marks, and grade.
+# Modify the program to display the top scorer’s name and average marks.
+# DICTIONARY CODING QUESTION
+students = {
+    "Amit" : [85,90,88],
+    "Shruti" : [92,95,94],
+    "Rahul" : [70,89,65],
+    "Prajakta" :[45,50,48],
+    "Nita" : [60,65,62]
+}
+def calAverage(marks):
+    return sum(marks)/len(marks)
+def assign_grade(avg):
+    if avg >= 90:
+        return "A"
+    elif avg >= 75:
+        return "B"
+    elif avg >= 60:
+        return "C"
+    else:
+        return "FAIL"
+
+top=""
+highAverage=0
+print("----student details----")
+for name, marks in students.items():
+    avg = calAverage(marks)
+    grade=assign_grade(avg)
+    print(f"Name: {name}, marks: {marks}, grade: {grade}")
+    if avg > highAverage:
+        highAverage = avg
+        top = name
+print("\nTOP SCORER")
+print(f"Name: {top}, Average: {highAverage}")
