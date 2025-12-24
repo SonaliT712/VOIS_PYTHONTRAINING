@@ -1,0 +1,55 @@
+# 1. Write a program to remove duplicate elements from a list without using set.
+lst = [1, 2, 3, 2, 4, 1, 5]
+new_list = []
+
+for item in lst:
+    if item not in new_list:
+        new_list.append(item)
+
+print("List after removing duplicates:", new_list)
+print("-------------------------------------------------------------------")
+#2.Given a list of numbers, create a new list containing only even numbers using list comprehension.
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+even_numbers = [num for num in numbers if num % 2 == 0]
+
+print("Even numbers:", even_numbers)
+print("-------------------------------------------------------------------")
+# 3. Write a program to find the second largest element in a list.
+lst = [10, 25, 5, 40, 30]
+
+largest = second_largest = -1
+
+for num in lst:
+    if num > largest:
+        second_largest = largest
+        largest = num
+    elif num > second_largest and num != largest:
+        second_largest = num
+
+print("Second largest element:", second_largest)
+print("-----------------------------------------------------------------------------")
+# 4. Create a nested list and calculate the sum of each inner list.
+nested_list = [[1, 2, 3], [4, 5], [6, 7, 8]]
+
+for inner_list in nested_list:
+    print("Sum:", sum(inner_list))
+print("---------------------------------------------------------------------------")
+# 5.Demonstrate shallow copy and deep copy of a list with mutable elements.
+import copy
+
+original = [[1, 2], [3, 4]]
+
+# Shallow copy
+shallow_copy = copy.copy(original)
+
+# Deep copy
+deep_copy = copy.deepcopy(original)
+
+# Modify original list
+original[0][0] = 99
+
+print("Original:", original)
+print("Shallow Copy:", shallow_copy)
+print("Deep Copy:", deep_copy)
+
